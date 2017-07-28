@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>秒杀列表页</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+</head>
+<body>
+<div class="container">
+
+    <div class="panel panel-default">
+        <div class="panel-heading text-center">
+            <h2>秒杀</h2>
+            <h3 id="loginPhone"></h3>
+            <button id="clearCook" class="btn btn-info">清除cookies</button>
+        </div>
+        <div class="panel-body">
+            <table class="table able-hover">
+                <thead>
+                <tr>
+                    <th>名称</th>
+                    <th>库存</th>
+                    <th>开始时间</th>
+                    <th>结束时间</th>
+                    <th>创建时间</th>
+                    <th>详情页</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="sk:${list}">
+                    <td th:text="${sk.name}"></td>
+
+                    <td th:text="${sk.number}"></td>
+
+                    <td th:text="${sk.startTime}"></td>
+
+                    <td th:text="${sk.endTime}"></td>
+
+                    <td th:text="${sk.createTime}"></td>
+
+                    <td><a class="btn btn-info" th:href="${'/seckill/' + sk.id + '/detail'}">link</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title" id="myModalLabel">
+                    秒杀电话（必填）
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-8 col-xs-offset-2">
+                        <input type="text" name="killPhone" id="killPhoneKey" placeholder="填写手机号^o^" class="form-control"/>
+                    </div>
+                    <div class="col-xs-8 col-xs-offset-2">
+                        <span id="inputMessage"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="killPhoneBtn" class="btn btn-success">
+                    <span class="glyphicon glyphicon-phone"></span>
+                    确定
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+
+
+</body>
+
+
+<script type="text/javascript" th:inline="javascript">
+    /*<![CDATA[*/
+
+    //验证手机号
+    function validatePhone (phone) {
+        if (phone&&phone.length == 11&&!isNaN(phone)) {
+            return true;//直接判断对象会看对象是否为空,空就是undefine就是false; isNaN 非数字返回true
+        } else {
+            return false;
+        }
+    }
+
+    var userPhone = $.cookie('userPhone');
+
+    $('#loginPhone').html('<h4 class="h4">登录手机号:' + userPhone + '</h4>');
+    $('#clearCook').click(function () {
+        $.cookie("userPhone",null,{path: '/seckill'});
+        var killPhoneModal = $('#myModal');
+        killPhoneModal.modal({
+            show:true,
+            keyboard:false,
+            backdrop:'static'
+        });
+    });
+    $('#killPhoneBtn').click(function () {
+        var inputPhone = $('#killPhoneKey').val();
+        console.log("inputPhone: " + inputPhone);
+        if (validatePhone(inputPhone)) {
+            //电话写入cookie(7天过期)
+            $.cookie('userPhone', inputPhone, {expires: 7, path: '/seckill'});
+            //验证通过　　刷新页面
+            window.location.reload();
+        } else {
+            $('#inputMessage').html('<label class="label label-danger text-center">手机号错误!</label>').show(30);
+        }
+    });
+
+    if (userPhone == null){
+        var killPhoneModal = $('#myModal');
+        killPhoneModal.modal({
+            show:true,
+            keyboard:false,
+            backdrop:'static'
+        });
+    }
+    /*]]>*/
+
+</script>
+
+
+</html>
