@@ -30,7 +30,16 @@
 - 使用SpringBoot内嵌Tomcat运行
 
 
+#项目效果图
 
+- 秒杀商品列表
+![效果图](/demoImage/1.png)
+
+- 商品详情页
+![效果图](/demoImage/2.png)
+
+- 商品详情页
+![效果图](/demoImage/3.png)
 
 
 
