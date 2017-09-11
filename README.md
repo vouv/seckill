@@ -4,7 +4,7 @@
 
 数据库连接池使用hikari
 
-很多组件用spring-starter快速配置 运行起来简单快速
+大部分组件用spring-starter快速配置 运行起来简单快速
 
 
 ## 项目的来源
