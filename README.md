@@ -16,6 +16,10 @@
 3. Java高并发秒杀API之Service层
 4. Java高并发秒杀API之高并发优化
 
+**Why SpringBoot**
+
+使用springBoot能快速搭建项目，约定优于配置，省去了大量配置xml的工作。
+
 
 ## 项目环境
 
