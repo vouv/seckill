@@ -44,6 +44,19 @@
 ![效果图](/demoImage/3.png)
 
 
+## Getting Started
+
+1. git clone https://github.com/monigo/seckill.git  <项目位置>
+
+2. idea打开项目 打开src/main/resources/application.properties
+
+3. 第一次运行时，配置 `spring.datasource.initialize=ture` 来让程序初始化数据库
+
+4. 配置mysql登录用户名和密码
+
+5. Run！
+
+
 
 
 
