@@ -2,7 +2,7 @@ DROP PROCEDURE execute_seckill;
 
 DELIMITER $$ -- console ;定义存储过程
 -- 定义存储过程
-CREATE PROCEDURE seckill.execute_seckill
+CREATE PROCEDURE execute_seckill
   (in v_seckill_id BIGINT,in v_phone BIGINT,in v_kill_time TIMESTAMP,OUT r_result int)
   BEGIN
     DECLARE insert_count INT DEFAULT 0;

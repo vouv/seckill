@@ -21,6 +21,7 @@ import java.util.List;
 @RequestMapping("/seckill")
 public class SeckillController {
 
+
     private final Logger  logger = LoggerFactory.getLogger(this.getClass());
 
 

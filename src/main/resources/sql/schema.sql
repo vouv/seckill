@@ -28,9 +28,9 @@ CREATE TABLE success_killed (
   seckill_id BIGINT NOT NULL COMMENT '商品id',
   user_phone BIGINT NOT NULL COMMENT 'phone',
   state TINYINT NOT NULL DEFAULT -1 COMMENT '',
-  creat_time TIMESTAMP NOT NULL ,
+  create_time TIMESTAMP NOT NULL ,
   PRIMARY KEY (seckill_id,user_phone),
-  KEY idx_create_time(creat_time)
+  KEY idx_create_time(create_time)
 )DEFAULT CHARSET=utf8 COMMENT ='秒杀成功表';
 
 
