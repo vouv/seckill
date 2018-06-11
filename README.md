@@ -6,7 +6,14 @@
 
 大部分组件用spring-starter快速配置 运行起来简单快速
 
-**Why SpringBoot**
+### 更新日志
+
+- 更新springboot2.0
+- 更新相关依赖
+- 引入lombok
+- 优化代码
+
+### Why SpringBoot
 
 使用springBoot能快速搭建项目，约定优于配置，省去了大量配置xml的工作。
 
@@ -40,7 +47,7 @@
 
 ## Getting Started
 
-1. git clone https://github.com/monigo/seckill.git
+1. git clone https://github.com/awlsx/seckill.git
 
 2. idea打开项目 打开src/main/resources/application.properties
 
