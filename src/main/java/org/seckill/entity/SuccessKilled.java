@@ -1,7 +1,10 @@
 package org.seckill.entity;
 
+import lombok.Data;
+
 import java.util.Date;
 
+@Data
 public class SuccessKilled {
     private long seckillId;
 
@@ -36,35 +39,4 @@ public class SuccessKilled {
                 '}';
     }
 
-    public long getSeckillId() {
-        return seckillId;
-    }
-
-    public void setSeckillId(long seckillId) {
-        this.seckillId = seckillId;
-    }
-
-    public long getUserPhone() {
-        return userPhone;
-    }
-
-    public void setUserPhone(long userPhone) {
-        this.userPhone = userPhone;
-    }
-
-    public short getState() {
-        return state;
-    }
-
-    public void setState(short state) {
-        this.state = state;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
 }

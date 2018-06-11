@@ -10,6 +10,7 @@ import org.seckill.service.SeckillService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +31,7 @@ public class SeckillController {
 
 
 
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    @GetMapping(value = "/list")
     public String list(Model model) {
 
 
@@ -42,7 +43,7 @@ public class SeckillController {
     }
     
 
-    @RequestMapping(value = "/{seckillId}/detail", method = RequestMethod.GET)
+    @GetMapping(value = "/{seckillId}/detail")
     public String detail(@PathVariable("seckillId") Long seckillId, Model model) {
 
         if (seckillId == null){
@@ -64,7 +65,7 @@ public class SeckillController {
 
 
     //ajax json
-    @RequestMapping(value = "/{seckillId}/exposer",method = RequestMethod.GET,produces = {"application/json;charset=UTF-8"})
+    @GetMapping(value = "/{seckillId}/exposer", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseBody
     public SeckillResult<Exposer> exposer(@PathVariable("seckillId") Long seckillId){
         SeckillResult<Exposer> result;
@@ -81,7 +82,7 @@ public class SeckillController {
 
     }
 
-    @RequestMapping(value = "/{seckillId}/{md5}/execution",method = RequestMethod.POST,produces = {"application/json;charset=UTF-8"})
+    @PostMapping(value = "/{seckillId}/{md5}/execution", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseBody
     public SeckillResult<SeckillExecution> execute(@PathVariable("seckillId") Long seckillId, @PathVariable("md5") String md5,
                                                    @CookieValue(value = "userPhone",required = false)Long userPhone){
@@ -110,7 +111,7 @@ public class SeckillController {
         return result;
     }
 
-    @RequestMapping(value = "/time/now", method = RequestMethod.GET)
+    @GetMapping(value = "/time/now")
     @ResponseBody
     public SeckillResult<Long> time(){
         return new SeckillResult<Long>(true,new Date().getTime());

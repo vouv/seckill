@@ -1,0 +1,27 @@
+# 配置datasource
+spring:
+  jpa:
+    show-sql: true
+  datasource:
+    initialize: false
+    url: jdbc:mysql://localhost:3306/seckill?characterEncoding=utf8&useSSL=true
+    username: root
+    password: 123456
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 20
+      max-lifetime: 30000
+      idle-timeout: 30000
+      data-source-properties:
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        cachePrepStmts: true
+        useServerPrepStmts: true
+
+#配置mybatis
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: org.seckill.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    use-generated-keys: true

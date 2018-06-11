@@ -14,11 +14,11 @@ import org.seckill.entity.SuccessKilled;
 import org.seckill.exception.RepeatKillException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 
+import javax.annotation.Resource;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -30,11 +30,13 @@ public class SeckillServiceImpl implements SeckillService {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Autowired
+    @Resource
     private SeckillDao seckillDao;
-    @Autowired
+
+    @Resource
     private SuccesskilledDao successkilledDao;
-    @Autowired
+
+    @Resource
     private RedisDao redisDao;
 
     private final String slat = "ahkacfku347tq73trkca7tktxe7fxf^%(*&^(*^IU%FU%EYWXST#$JHGKJGJfjytrj";
