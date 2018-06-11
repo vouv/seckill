@@ -1,10 +1,14 @@
 # seckill
 
-用SpringBoot + Mybatis + mysql + redis 实现的秒杀案例
+用SpringBoot实现的秒杀案例
+
+- Mybatis
+- Mysql
+- redis
 
 数据库连接池使用hikari
 
-大部分组件用spring-starter快速配置 运行起来简单快速
+优点：快速配置、运行简单快速
 
 ### 更新日志
 
@@ -25,11 +29,7 @@
 
 - 项目使用Idea搭建
 
-- 操作系统苹果macOS Sierra 10.12.6
-
-- mysql redis基于brew安装
-
-- 使用SpringBoot内嵌Tomcat容器运行服务
+- 操作系统苹果macOS
 
 
 ## 项目效果图
@@ -49,7 +49,7 @@
 
 1. git clone https://github.com/awlsx/seckill.git
 
-2. idea打开项目 打开src/main/resources/application.properties
+2. idea打开项目 打开src/main/resources/application.yml
 
 3. 第一次运行时，先把sql文件夹下的sql文件放到resources文件夹下，然后配置 `spring.datasource.initialize=ture` 来让程序初始化数据库
 
