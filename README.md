@@ -1,5 +1,10 @@
 # seckill
 
+
+[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/monigo-dev/project-seckill)
+
+![License](https://img.shields.io/packagist/l/doctrine/orm.svg)
+
 用SpringBoot实现的秒杀案例
 
 - Mybatis
