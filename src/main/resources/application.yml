@@ -15,7 +15,8 @@ spring:
         prepStmtCacheSize: 250
         prepStmtCacheSqlLimit: 2048
         cachePrepStmts: true
-        useServerPrepStmts: true\
+        useServerPrepStmts: true
+
 
 #配置mybatis
 mybatis:

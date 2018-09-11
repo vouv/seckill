@@ -14,12 +14,16 @@
 
 优点：快速配置、运行简单快速
 
+
 ### 更新日志
+
+*2018-6-11
 
 - 更新springboot2.0
 - 更新相关依赖
 - 引入lombok
 - 优化代码
+
 
 ### Why SpringBoot
 
@@ -55,7 +59,7 @@
 
 2. idea打开项目 打开src/main/resources/application.yml
 
-3. 第一次运行时，先把sql文件夹下的sql文件放到resources文件夹下，然后配置 `spring.datasource.initialize=ture` 来让程序初始化数据库
+3. 使用sql文件夹下的sql文件初始化数据库
 
 4. 配置mysql登录用户名和密码
 
