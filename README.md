@@ -1,6 +1,6 @@
 # seckill
 
-![build](https://travis-ci.org/monigo/seckill.svg?branch=master)
+[![build](https://travis-ci.org/monigo/seckill.svg?branch=master)](https://travis-ci.org/monigo/seckill)
 [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/monigo-dev/project-seckill)
 ![License](https://img.shields.io/packagist/l/doctrine/orm.svg)
 
@@ -40,13 +40,13 @@
 
 
 - 秒杀商品列表
-![效果图](/demoImage/1.png)
+![效果图](demoImage/1.png)
 
 - 商品详情页1
-![效果图](/demoImage/2.png)
+![效果图](demoImage/2.png)
 
 - 商品详情页2
-![效果图](/demoImage/3.png)
+![效果图](demoImage/3.png)
 
 
 ## Getting Started
