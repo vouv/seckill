@@ -1,6 +1,6 @@
 # seckill
 
-
+![build](https://travis-ci.org/monigo/seckill.svg?branch=master)
 [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/monigo-dev/project-seckill)
 ![License](https://img.shields.io/packagist/l/doctrine/orm.svg)
 
