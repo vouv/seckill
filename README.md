@@ -49,7 +49,7 @@
 
 ## Getting Started
 
-1. git clone https://github.com/awlsx/seckill.git
+1. git clone https://github.com/monigo/seckill.git
 
 2. idea打开项目 打开src/main/resources/application.yml
 
